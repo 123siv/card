@@ -4,7 +4,7 @@
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
  }
-
+ 
  body {
     background-color: #eeeeea;
  }
@@ -25,8 +25,33 @@
     justify-content: start;
  }
 
+ @media screen and (max-width: 767px) {
+    .container {
+        flex-direction: column; /* Change to a vertical layout */
+    }
+
+    input:checked + label {
+    height: 100%;
+   }
+
+   .card {
+      width: 50px;
+   }
+
+    .sidebar,
+    .main-content {
+        width: 100%; /* Take up the full width on smaller screens */
+    }
+}
+
+@media screen and (min-width: 767px){
+   .card {
+      width: 80px;
+   }
+}
+
  .card {
-    width: 80px;
+    
     border-radius: .75rem;
     background-size: cover;
     cursor: pointer;
@@ -56,7 +81,7 @@
     margin: 15px;
  }
 
- .card > .row > .description {
+ .card > .row {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -67,15 +92,6 @@
     transform: translateY(30px);
     transition-delay: .3s;
     transition: all .3s ease;
- }
-
- .description p {
-    color: #b0b0ba;
-    padding-top: 5px;
- }
-
- .description h4 {
-    text-transform: uppercase;
  }
 
  input {
